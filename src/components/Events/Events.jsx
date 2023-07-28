@@ -15,7 +15,7 @@ const Events = () => {
   return (
     <>
       <h1>Events</h1>
-      <Grid
+      <Grid justifyContent="center" alignItems="center"
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 9, md: 12 }}
