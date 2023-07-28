@@ -1,21 +1,26 @@
 import { useEffect, useState } from 'react';
-import getEventsActives from '../Functions/Funtions';
+import { getEventsActives, getEventsUpcoming } from '../Functions/Funtions';
 import Loading from '../Loading/Loading';
 import CardEvent from '../CardEvent/CardEvent';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 // Con la función de getEvent, podemos pasarle el estado de setEvents, y eso hará que nos setee los valores de los eventos en su función
 
 const Events = () => {
   const [events, setEvents] = useState(null);
-
+  const [eventsUpcoming, setEventsUpcoming] = useState(null);
   useEffect(() => {
     getEventsActives(setEvents);
+    getEventsUpcoming(setEventsUpcoming);
   }, []);
   console.log(events);
   return (
     <>
-      <h1>Events</h1>
-      <Grid justifyContent="center" alignItems="center"
+      <Typography mt={5} mb={2} variant={'h2'}>
+        Activos
+      </Typography>
+      <Grid
+        justifyContent="start"
+        alignItems="center"
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 9, md: 12 }}
@@ -23,20 +28,23 @@ const Events = () => {
         {events === null ? (
           <Loading />
         ) : (
-          events.map((event) => (
-            <CardEvent props={event} />
-            // <div className="div" key={event.slot.id}>
-            //   {event.slot.name}
-            //   {event.slot.emoji}
-            //   {event.slot.hash}
-            //   {event.slot.listAlone}
-            //   {event.slot.hideable}
-            //   {event.slot.hideForSlot}
-            //   {event.slot.background}
-            //   {event.startTime}
-            //   {event.endTime}
-            // </div>
-          ))
+          events.map((event) => <CardEvent props={event} />)
+        )}
+      </Grid>
+      <Typography mt={5} mb={2} variant={'h2'}>
+        Proximamente...
+      </Typography>
+      <Grid
+        justifyContent="start"
+        alignItems="center"
+        container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 9, md: 12 }}
+      >
+        {eventsUpcoming === null ? (
+          <Loading />
+        ) : (
+          eventsUpcoming.map((eventsUp) => <CardEvent props={eventsUp} />)
         )}
       </Grid>
     </>
