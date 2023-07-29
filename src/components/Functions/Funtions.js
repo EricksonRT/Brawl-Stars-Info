@@ -5,7 +5,7 @@ export const getEventsActives = async (state) => {
   const response = await axios.get('https://api.brawlapi.com/v1/events');
   // data.active && data.upcoming
   // Enviamos los eventos
-  state(response.data.active);
+  // state(response.data.active);
 };
 
 export const getEventsUpcoming = async (state) => {
