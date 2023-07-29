@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Avatar, Grid } from '@mui/material';
+import { formatDate } from '../Functions/Funtions';
 
 export default function CardEvent({ props }) {
   return (
@@ -35,11 +36,11 @@ export default function CardEvent({ props }) {
               <Typography variant="body2" className="" color="text.primary">
                 Comienzo
                 <br />
-                {props.startTime}
+                {formatDate(props.startTime)}
               </Typography>
               <Typography variant="body2" color="text.primary">
                 Fin
-                <br /> {props.startTime}
+                <br /> {formatDate(props.endTime)}
               </Typography>{' '}
             </Grid>
           </Grid>

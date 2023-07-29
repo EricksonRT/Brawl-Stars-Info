@@ -2,25 +2,30 @@ import { Container, Typography, Box, Link, Grid } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 // Color anterior: f8f8f8
 const Footer = () => (
-  <Grid container spacing={12}>
-    <Box
+  <Grid display={"flex"} justifyContent={"center"} spacing={0.5} >
+    <Box 
       sx={{
         backgroundColor: "#ECECEC",
         py: 10, // padding vertical
-        mt: 30, // margin top
-        width: 100+"%",
+        mt: 10, // margin top
+        mb:-4,
+        width: 100 + "%",
         height: 100,
-        marginLeft:0
       }}
       component="footer"
     >
-      <Container maxWidth="sx" spacing={12}>
+      <Container maxWidth="sx" spacing={0}>
         <Typography variant="h6" color="text.primary" align="center">
           Brawl-Stars-info
         </Typography>
         <Typography variant="p" color="text.secondary" align="justify">
           Ésta aplicación usa la API de{" "}
-          <Link component={RouterLink} target="_blank" to="https://brawlify.com/es/" color="inherit">
+          <Link
+            component={RouterLink}
+            target="_blank"
+            to="https://brawlify.com/es/"
+            color="inherit"
+          >
             Brawlify
           </Link>{" "}
           cualquier cambio, limitación u otro alteramiento en la visibilidad de
