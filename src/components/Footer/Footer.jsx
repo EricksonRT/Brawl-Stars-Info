@@ -36,7 +36,7 @@ const Footer = () => (
           {/* Asegúrate de reemplazar estas rutas y nombres con los tuyos */}
           <Link component={RouterLink} to="/acerca-de" color="inherit">
             GitHub
-          </Link>{' '}
+          </Link>
           |
           <Link component={RouterLink} to="/privacidad" color="inherit">
             Política de Privacidad
