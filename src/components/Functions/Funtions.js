@@ -18,9 +18,9 @@ export const getEventsUpcoming = async (state) => {
 // Moment maneja fechas y horas de una manera fácil, que permite crear distintos formatos
 import moment from 'moment';
 
-export const formatDate=(originalDate)=> {
+export const formatDate = (originalDate) => {
   let date = moment.utc(originalDate);
-  
-  let newFormat = date.format("DD/MMM/YYYY HH:mm:ss");
-  return newFormat; 
-}
+
+  let newFormat = date.format('DD/MMM/YYYY HH:mm:ssa');
+  return newFormat;
+};

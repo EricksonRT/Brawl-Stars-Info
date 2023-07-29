@@ -17,3 +17,13 @@
 body {
   margin: 0;
 }
+.badge {
+  width: 35%;
+  text-align: center;
+  margin: auto;
+  position: inherit !important;
+}
+
+.color-white {
+  color: #ffffff !important;
+}

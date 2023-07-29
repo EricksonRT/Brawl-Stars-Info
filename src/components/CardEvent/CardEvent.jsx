@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Avatar, Grid } from '@mui/material';
+import { Avatar, Badge, Grid } from '@mui/material';
 import { formatDate } from '../Functions/Funtions';
 
 export default function CardEvent({ props }) {
@@ -21,18 +21,45 @@ export default function CardEvent({ props }) {
           {props.slot.emoji}
         </Typography>
         <CardMedia
+          loading="lazy"
           component="img"
           alt={props.slot.name}
           height="140"
           image={props.map.environment.imageUrl}
         />
+        {/* <Typography
+          sx={{ textAlign: 'left', marginLeft: 6 }}
+          component="div"
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+        >
+         
+        </Typography> */}
+
         <CardContent>
           <Grid container>
             <Grid display="flex" justifyContent="center" alignItems={'top'}>
-              <Avatar
-                sx={{ width: 100, height: 100, borderRadius: 3 }}
-                src={props.map.imageUrl}
-              />
+              <Badge
+                className="badge"
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'top',
+                }}
+                color="secondary"
+                badgeContent={`Mapa: ${props.map.name}`}
+              >
+                <Avatar
+                  sx={{
+                    width: 100,
+                    height: 100,
+                    borderRadius: 3,
+                    marginTop: 2.5,
+                  }}
+                  src={props.map.imageUrl}
+                />
+              </Badge>
               <Typography variant="body2" className="" color="text.primary">
                 Comienzo
                 <br />
@@ -41,7 +68,7 @@ export default function CardEvent({ props }) {
               <Typography variant="body2" color="text.primary">
                 Fin
                 <br /> {formatDate(props.endTime)}
-              </Typography>{' '}
+              </Typography>
             </Grid>
           </Grid>
         </CardContent>
