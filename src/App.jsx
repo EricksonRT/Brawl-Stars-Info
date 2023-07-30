@@ -7,6 +7,7 @@ import Events from './components/Events/Events';
 import Maps from './components/Maps/Maps';
 import GameModes from './Game-Modes/GameModes';
 import Footer from './components/Footer/Footer';
+import BrawlerDetailContainer from './components/BrawlerDetailContainer/BrawlerDetailContainer';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" />
         <Route path="/events/" element={<Events />} />
         <Route path="/brawlers/" element={<Brawlers />} />
+        <Route path="/brawlers/:brawlerName/" element={<BrawlerDetailContainer />} />
         <Route path="/maps/" element={<Maps />} />
         <Route path="/game-Modes/" element={<GameModes />} />
         <Route path="/icons/" element={<Icons />} />

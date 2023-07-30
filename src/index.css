@@ -34,3 +34,7 @@ body {
 .color-white {
   color: #ffffff !important;
 }
+.link{
+  text-decoration: none;
+  color:#000;
+}
