@@ -15,10 +15,9 @@ export const getEventsUpcoming = async (state) => {
   state(response.data.upcoming);
 };
 
-export const getBrawlers = async (state) => {
-  const response = await axios.get('https://api.brawlapi.com/v1/brawlers');
+export const getBrawlers = () => {
   // Envia todos los brawlers
-  state(response.data.list);
+  return fetch('https://api.brawlapi.com/v1/brawlers');
 };
 
 // Moment maneja fechas y horas de una manera fácil, que permite crear distintos formatos
