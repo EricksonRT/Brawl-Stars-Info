@@ -24,6 +24,13 @@ body {
   position: inherit !important;
 }
 
+.badgeInfo > span {
+  background-color: rgba(1, 12, 134, 0.731) !important;
+  color: #ffffff !important;
+  height: 25px !important;
+  font-weight: 600;
+}
+
 .color-white {
   color: #ffffff !important;
 }

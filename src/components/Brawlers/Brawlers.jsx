@@ -10,18 +10,33 @@ const Brawlers = () => {
   useEffect(() => {
     getBrawlers()
       .then((response) => response.json())
-      .then((brawlers) => setBrawlers(brawlers))
+      .then((brawlers) => setBrawlers(brawlers.list))
       .catch((err) => console.log(err))
       .finally(setIsLoading(false));
   }, []);
   return (
-    <Grid mt={5}>
-      {isLoading == true && brawlers == null ? (
-        <Loading />
-      ) : (
-        <BrawlersListContainer props={brawlers} />
-      )}
-    </Grid>
+    <>
+      <Typography mt={5} mb={2} variant={'h2'}>
+        Lista de Brawlers
+      </Typography>
+      <Grid
+        mt={5}
+        display={'flex'}
+        justifyContent={'space-between'}
+        flexWrap={'wrap'}
+        alignItems={'center'}
+      >
+        {isLoading == true ? (
+          <Loading />
+        ) : (
+          brawlers != null &&
+          brawlers.map((brawl) => (
+            <BrawlersListContainer key={brawl.id} props={brawl} />
+          ))
+        )}
+        .
+      </Grid>
+    </>
   );
 };
 export default Brawlers;
