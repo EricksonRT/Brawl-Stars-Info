@@ -10,8 +10,8 @@ const Loading = () => {
             <div className="image"></div>
           </div>
         </div>
-        <Typography mt={0.9} variant="h6" component="h2">
-          Cargando... espere un momento.
+        <Typography mt={0.9} variant="h6" fontWeight={550}>
+          Cargando, espere un momento...
         </Typography>
       </Box>
     </Grid>

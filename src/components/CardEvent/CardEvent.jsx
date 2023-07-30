@@ -3,7 +3,6 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Avatar, Badge, Grid } from '@mui/material';
 import { formatDate } from '../Functions/Funtions';
@@ -27,17 +26,6 @@ export default function CardEvent({ props }) {
           height="140"
           image={props.map.environment.imageUrl}
         />
-        {/* <Typography
-          sx={{ textAlign: 'left', marginLeft: 6 }}
-          component="div"
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-        >
-         
-        </Typography> */}
-
         <CardContent>
           <Grid container>
             <Grid display="flex" justifyContent="center" alignItems={'top'}>
@@ -73,8 +61,6 @@ export default function CardEvent({ props }) {
           </Grid>
         </CardContent>
         <CardActions>
-          {/* <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button> */}
         </CardActions>
       </Card>
     </Grid>

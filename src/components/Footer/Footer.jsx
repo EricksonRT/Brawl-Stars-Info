@@ -2,7 +2,7 @@ import { Container, Typography, Box, Link, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 // Color anterior: f8f8f8
 const Footer = () => (
-  <Grid display={'flex'} justifyContent={'center'} spacing={0.5}>
+  <Grid display={'flex'} justifyContent={'center'}>
     <Box
       className="color-white"
       sx={{
