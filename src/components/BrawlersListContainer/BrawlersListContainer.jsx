@@ -6,21 +6,21 @@ import {
   CardContent,
   CardMedia,
   Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const BrawlersListContainer = ({ props }) => {
   console.log(props);
   return (
     <>
       <Box>
-        <Card sx={{ maxWidth: 145, mb: "15%" }}>
+        <Card sx={{ maxWidth: 145, mb: '15%' }}>
           <Link className="link" to={`/brawlers/${props.name}/`}>
             <CardActionArea>
               <CardMedia
                 loading="lazy"
                 component="img"
-                width={100 + "%"}
+                width={100 + '%'}
                 height="auto"
                 image={props.imageUrl}
                 alt={props.name}
@@ -34,8 +34,8 @@ const BrawlersListContainer = ({ props }) => {
                   className="badgeInfo"
                   sx={{ mb: -11, height: 4 }}
                   anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "right",
+                    vertical: 'bottom',
+                    horizontal: 'right',
                   }}
                   badgeContent={props.class.name}
                 ></Badge>

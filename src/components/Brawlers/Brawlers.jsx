@@ -20,13 +20,14 @@ const Brawlers = () => {
         Lista de Brawlers
       </Typography>
       <Grid
+        gap={3}
         mt={5}
         display={'flex'}
-        justifyContent={'space-between'}
+        justifyContent={'center'}
         flexWrap={'wrap'}
         alignItems={'center'}
       >
-        {isLoading == true ? (
+        {isLoading ? (
           <Loading />
         ) : (
           brawlers != null &&

@@ -44,7 +44,9 @@ const Events = () => {
         {eventsUpcoming === null ? (
           <Loading />
         ) : (
-          eventsUpcoming.map((eventsUp) => <CardEvent props={eventsUp} key={eventsUp.slot.id} />)
+          eventsUpcoming.map((eventsUp) => (
+            <CardEvent props={eventsUp} key={eventsUp.slot.id} />
+          ))
         )}
       </Grid>
     </>
