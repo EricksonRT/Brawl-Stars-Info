@@ -5,17 +5,19 @@ import {
   Box,
   Button,
   CardMedia,
+  Divider,
   Grid,
   Typography,
-} from "@mui/material";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { getBrawlers } from "../Functions/Funtions";
-import Loading from "../Loading/Loading";
+} from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { getBrawlers } from '../Functions/Funtions';
+import Loading from '../Loading/Loading';
+import Modal_Info from './Modal_Info';
 const BrawlerDetailContainer = () => {
   const { brawlerName } = useParams();
-  const [dataBrawler, setDataBrawler] = useState([""]);
+  const [dataBrawler, setDataBrawler] = useState(['']);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -39,11 +41,11 @@ const BrawlerDetailContainer = () => {
           container
           xs={12}
           mt={5}
-          display={"flex"}
-          justifyContent={"center"}
-          flexWrap={"wrap"}
-          margin={"20 auto"}
-          width={"100%"}
+          display={'flex'}
+          justifyContent={'center'}
+          flexWrap={'wrap'}
+          margin={'20 auto'}
+          width={'100%'}
         >
           <Box>
             <CardMedia
@@ -55,8 +57,8 @@ const BrawlerDetailContainer = () => {
               alt={dataBrawler[0].name}
             />
           </Box>
-          <Box m={"0 1%"}>
-            <Typography component={"h4"} variant="h4" textAlign={"center"}>
+          <Box m={'0 1%'}>
+            <Typography component={'h4'} variant="h4" textAlign={'center'}>
               Información de {dataBrawler[0]?.name}
             </Typography>
             <Grid
@@ -64,43 +66,99 @@ const BrawlerDetailContainer = () => {
               // display={"flex"}
               // alignContent={"space-between"}
               // alignItems={"center"}
-              flexWrap={"wrap"}
+              flexWrap={'wrap'}
             >
-              <Typography component={"div"} variant="p" fontWeight={600}>
+              <Typography component={'div'} variant="p" fontWeight={600}>
                 {/* Este operador permite leer la propiedad class de dataBrawler[0] sin causar un error si dataBrawler[0] es null o undefined. */}
                 Tipo de brawler: {dataBrawler[0]?.class?.name}
               </Typography>
-              <Typography component={"div"} variant="p" fontWeight={600}>
+              <Typography component={'div'} variant="p" fontWeight={600}>
                 Categoria: {dataBrawler[0]?.rarity?.name}
               </Typography>
-              <Typography component={"div"} variant="p" fontWeight={600}>
+              <Typography component={'div'} variant="p" fontWeight={600}>
                 Descripción: {dataBrawler[0]?.description}
               </Typography>
             </Grid>
-            {/* <Grid width={"30%"}>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={"dd"}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
+            <Grid
+              container
+              display={'flex'}
+              flexDirection={'col'}
+              flexWrap={'wrap'}
+              alignItems={'center'}
+            >
+              <Grid sm display={'grid'} gridColumn={'auto'}>
+                <CardMedia
+                  sx={{ margin: 'auto' }}
+                  className="img-gadget"
+                  loading="lazy"
+                  component="img"
+                  height="50px"
+                  image={dataBrawler[0].gadgets[0].imageUrl}
+                  alt={dataBrawler[0].name}
+                />
+                <Typography
+                  component={'p'}
+                  variant="p"
+                  fontWeight={600}
+                  fontStyle={'italic'}
                 >
-                  <Typography>Accordion 1</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </Grid> */}
+                  Gadgets
+                </Typography>
+                <Typography mt={3} component={'div'} variant="p">
+                  {/* {dataBrawler[0]?.gadgets[0]?.name} <br /> */}
+                  <Modal_Info
+                    name={dataBrawler[0]?.gadgets[0]?.name}
+                    description={dataBrawler[0]?.gadgets[0]?.descriptionHtml}
+                  />
+                </Typography>
+                <Typography mt={1} component={'div'} variant="p">
+                  {dataBrawler[0]?.gadgets[1]?.name} <br />
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: dataBrawler[0]?.gadgets[1]?.descriptionHtml,
+                    }}
+                  />
+                </Typography>
+              </Grid>
+              <Divider orientation="vertical" flexItem></Divider>
+              <Grid item xs>
+                <CardMedia
+                  sx={{ margin: 'auto' }}
+                  className="img-gadget"
+                  loading="lazy"
+                  component="img"
+                  height="50px"
+                  image={dataBrawler[0].starPowers[0].imageUrl}
+                  alt={dataBrawler[0].name}
+                />
+                <Typography component={'div'} variant="p" fontWeight={600}>
+                  Habilidades Estelares
+                </Typography>
+                <Typography mt={3} component={'div'} variant="p">
+                  {dataBrawler[0]?.starPowers[0]?.name} <br />
+                  {/* Renderiza el contenido html */}
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: dataBrawler[0]?.starPowers[0]?.descriptionHtml,
+                    }}
+                  />
+                </Typography>
+                <Typography mt={1} component={'div'} variant="p">
+                  {dataBrawler[0]?.gadgets[1]?.name} <br />
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: dataBrawler[0]?.starPowers[1]?.descriptionHtml,
+                    }}
+                  />
+                </Typography>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
       )}
 
-      <Grid display={"flex"} alignContent={"flex-start"}>
-        <Link to={"/brawlers/"}>
+      <Grid mt={5} display={'flex'} alignContent={'flex-start'}>
+        <Link to={'/brawlers/'}>
           <ArrowBackIcon color="primary" />
           <Button color="primary">Volver</Button>
         </Link>

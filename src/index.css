@@ -34,7 +34,11 @@ body {
 .color-white {
   color: #ffffff !important;
 }
-.link{
+.link {
   text-decoration: none;
-  color:#000;
+  color: #000;
+}
+.img-gadget {
+  width: 8% !important;
+  height: auto;
 }
