@@ -105,18 +105,16 @@ const BrawlerDetailContainer = () => {
                   Gadgets
                 </Typography>
                 <Typography mt={3} component={'div'} variant="p">
-                  {/* {dataBrawler[0]?.gadgets[0]?.name} <br /> */}
+                  {/* Muestra los gadgets */}
                   <Modal_Info
                     name={dataBrawler[0]?.gadgets[0]?.name}
                     description={dataBrawler[0]?.gadgets[0]?.descriptionHtml}
                   />
                 </Typography>
                 <Typography mt={1} component={'div'} variant="p">
-                  {dataBrawler[0]?.gadgets[1]?.name} <br />
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: dataBrawler[0]?.gadgets[1]?.descriptionHtml,
-                    }}
+                  <Modal_Info
+                    name={dataBrawler[0]?.gadgets[1]?.name}
+                    description={dataBrawler[0]?.gadgets[1]?.descriptionHtml}
                   />
                 </Typography>
               </Grid>
@@ -135,20 +133,16 @@ const BrawlerDetailContainer = () => {
                   Habilidades Estelares
                 </Typography>
                 <Typography mt={3} component={'div'} variant="p">
-                  {dataBrawler[0]?.starPowers[0]?.name} <br />
                   {/* Renderiza el contenido html */}
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: dataBrawler[0]?.starPowers[0]?.descriptionHtml,
-                    }}
+                  <Modal_Info
+                    name={dataBrawler[0]?.starPowers[0]?.name}
+                    description={dataBrawler[0]?.starPowers[0]?.descriptionHtml}
                   />
                 </Typography>
                 <Typography mt={1} component={'div'} variant="p">
-                  {dataBrawler[0]?.gadgets[1]?.name} <br />
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: dataBrawler[0]?.starPowers[1]?.descriptionHtml,
-                    }}
+                  <Modal_Info
+                    name={dataBrawler[0]?.starPowers[1]?.name}
+                    description={dataBrawler[0]?.starPowers[1]?.descriptionHtml}
                   />
                 </Typography>
               </Grid>
