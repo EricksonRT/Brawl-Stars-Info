@@ -39,6 +39,10 @@ body {
   color: #000;
 }
 .img-gadget {
-  width: 8% !important;
-  height: auto;
+  width: 2.2em !important;
+  height: 100%;
+}
+.img-gadget-icon{
+  width: 1.2em !important;
+  height: 100%;
 }

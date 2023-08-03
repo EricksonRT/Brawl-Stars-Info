@@ -8,16 +8,16 @@ import {
   Divider,
   Grid,
   Typography,
-} from '@mui/material';
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { getBrawlers } from '../Functions/Funtions';
-import Loading from '../Loading/Loading';
-import Modal_Info from './Modal_Info';
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { getBrawlers } from "../Functions/Funtions";
+import Loading from "../Loading/Loading";
+import Modal_Info from "./Modal_Info";
 const BrawlerDetailContainer = () => {
   const { brawlerName } = useParams();
-  const [dataBrawler, setDataBrawler] = useState(['']);
+  const [dataBrawler, setDataBrawler] = useState([""]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -39,13 +39,14 @@ const BrawlerDetailContainer = () => {
       ) : (
         <Grid
           container
-          xs={12}
+          // xs={12}
           mt={5}
-          display={'flex'}
-          justifyContent={'center'}
-          flexWrap={'wrap'}
-          margin={'20 auto'}
-          width={'100%'}
+          display={"flex"}
+          justifyContent={"center"}
+          flexWrap={"wrap"}
+          margin={"20 auto"}
+          width={"100%"}
+          alignItems={"center"}
         >
           <Box>
             <CardMedia
@@ -57,8 +58,8 @@ const BrawlerDetailContainer = () => {
               alt={dataBrawler[0].name}
             />
           </Box>
-          <Box m={'0 1%'}>
-            <Typography component={'h4'} variant="h4" textAlign={'center'}>
+          <Box m={"0 1%"}>
+            <Typography component={"h4"} variant="h4" textAlign={"center"}>
               Información de {dataBrawler[0]?.name}
             </Typography>
             <Grid
@@ -66,29 +67,29 @@ const BrawlerDetailContainer = () => {
               // display={"flex"}
               // alignContent={"space-between"}
               // alignItems={"center"}
-              flexWrap={'wrap'}
+              // flexWrap={"wrap"}
             >
-              <Typography component={'div'} variant="p" fontWeight={600}>
+              <Typography component={"div"} variant="p" fontWeight={600}>
                 {/* Este operador permite leer la propiedad class de dataBrawler[0] sin causar un error si dataBrawler[0] es null o undefined. */}
                 Tipo de brawler: {dataBrawler[0]?.class?.name}
               </Typography>
-              <Typography component={'div'} variant="p" fontWeight={600}>
+              <Typography component={"div"} variant="p" fontWeight={600}>
                 Categoria: {dataBrawler[0]?.rarity?.name}
               </Typography>
-              <Typography component={'div'} variant="p" fontWeight={600}>
+              <Typography component={"div"} variant="p" fontWeight={600}>
                 Descripción: {dataBrawler[0]?.description}
               </Typography>
             </Grid>
             <Grid
               container
-              display={'flex'}
-              flexDirection={'col'}
-              flexWrap={'wrap'}
-              alignItems={'center'}
+              display={"flex"}
+              flexDirection={"col"}
+              flexWrap={"wrap"}
+              alignItems={"center"}
             >
-              <Grid sm display={'grid'} gridColumn={'auto'}>
+              <Grid item xs display={"grid"} gridColumn={"auto"}>
                 <CardMedia
-                  sx={{ margin: 'auto' }}
+                  sx={{ margin: "auto" }}
                   className="img-gadget"
                   loading="lazy"
                   component="img"
@@ -97,22 +98,24 @@ const BrawlerDetailContainer = () => {
                   alt={dataBrawler[0].name}
                 />
                 <Typography
-                  component={'p'}
+                  component={"p"}
                   variant="p"
                   fontWeight={600}
-                  fontStyle={'italic'}
+                  fontStyle={"italic"}
                 >
                   Gadgets
                 </Typography>
-                <Typography mt={3} component={'div'} variant="p">
+                <Typography mt={3} component={"div"} variant="p">
                   {/* Muestra los gadgets */}
                   <Modal_Info
+                    icon={dataBrawler[0]?.gadgets[0]?.imageUrl}
                     name={dataBrawler[0]?.gadgets[0]?.name}
                     description={dataBrawler[0]?.gadgets[0]?.descriptionHtml}
                   />
                 </Typography>
-                <Typography mt={1} component={'div'} variant="p">
+                <Typography mt={1} component={"div"} variant="p">
                   <Modal_Info
+                    icon={dataBrawler[0]?.gadgets[0]?.imageUrl}
                     name={dataBrawler[0]?.gadgets[1]?.name}
                     description={dataBrawler[0]?.gadgets[1]?.descriptionHtml}
                   />
@@ -121,7 +124,7 @@ const BrawlerDetailContainer = () => {
               <Divider orientation="vertical" flexItem></Divider>
               <Grid item xs>
                 <CardMedia
-                  sx={{ margin: 'auto' }}
+                  sx={{ margin: "auto" }}
                   className="img-gadget"
                   loading="lazy"
                   component="img"
@@ -129,18 +132,20 @@ const BrawlerDetailContainer = () => {
                   image={dataBrawler[0].starPowers[0].imageUrl}
                   alt={dataBrawler[0].name}
                 />
-                <Typography component={'div'} variant="p" fontWeight={600}>
+                <Typography component={"div"} variant="p" fontWeight={600}>
                   Habilidades Estelares
                 </Typography>
-                <Typography mt={3} component={'div'} variant="p">
+                <Typography mt={3} component={"div"} variant="p">
                   {/* Renderiza el contenido html */}
                   <Modal_Info
+                    icon={dataBrawler[0]?.starPowers[0]?.imageUrl}
                     name={dataBrawler[0]?.starPowers[0]?.name}
                     description={dataBrawler[0]?.starPowers[0]?.descriptionHtml}
                   />
                 </Typography>
-                <Typography mt={1} component={'div'} variant="p">
+                <Typography mt={1} component={"div"} variant="p">
                   <Modal_Info
+                    icon={dataBrawler[0]?.starPowers[1]?.imageUrl}
                     name={dataBrawler[0]?.starPowers[1]?.name}
                     description={dataBrawler[0]?.starPowers[1]?.descriptionHtml}
                   />
@@ -151,8 +156,8 @@ const BrawlerDetailContainer = () => {
         </Grid>
       )}
 
-      <Grid mt={5} display={'flex'} alignContent={'flex-start'}>
-        <Link to={'/brawlers/'}>
+      <Grid mt={5} display={"flex"} alignContent={"flex-start"}>
+        <Link to={"/brawlers/"}>
           <ArrowBackIcon color="primary" />
           <Button color="primary">Volver</Button>
         </Link>
