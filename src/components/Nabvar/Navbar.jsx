@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
+import * as React from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Avatar,
@@ -12,8 +12,8 @@ import {
   Toolbar,
   Tooltip,
   Typography,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -26,11 +26,11 @@ const Navbar = () => {
   };
 
   const pages = [
-    { category: 'Brawlers', route: '/brawlers/' },
-    { category: 'Eventos', route: '/events/' },
-    { category: 'Iconos', route: '/iconos/' },
-    { category: 'Mapas', route: '/mapas/' },
-    { category: 'Modos de juego', route: '/modos-de-juego/' },
+    { category: "Brawlers", route: "/brawlers/" },
+    { category: "Eventos", route: "/events/" },
+    { category: "Iconos", route: "/icons/" },
+    { category: "Mapas", route: "/maps/" },
+    { category: "Modos de juego", route: "/game-mode/" },
   ];
 
   return (
@@ -45,18 +45,18 @@ const Navbar = () => {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
                 fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
               Brawl-Stars-info
             </Typography>
             {/* Ajustes del nav Desktop */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <Tooltip title="Abrir menú">
                 <IconButton
                   size="large"
@@ -73,27 +73,27 @@ const Navbar = () => {
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
+                  vertical: "bottom",
+                  horizontal: "left",
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
+                  vertical: "top",
+                  horizontal: "left",
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: "block", md: "none" },
                 }}
               >
                 {pages.map((page) => (
                   <MenuItem key={page.category} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">
-                      {' '}
+                      {" "}
                       <Link
                         to={page.route}
-                        style={{ color: 'inherit', textDecoration: 'none' }}
+                        style={{ color: "inherit", textDecoration: "none" }}
                       >
                         {page.category}
                       </Link>
@@ -110,27 +110,27 @@ const Navbar = () => {
               href=""
               sx={{
                 mr: 2,
-                display: { xs: 'flex', md: 'none' },
+                display: { xs: "flex", md: "none" },
                 flexGrow: 1,
-                fontFamily: 'monospace',
+                fontFamily: "monospace",
                 fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
               Brawl-Stars-info
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
                   key={page.category}
                   onClick={handleCloseNavMenu}
-                  sx={{ m: 0.5, my: 2, color: 'white', display: 'block' }}
+                  sx={{ m: 0.5, my: 2, color: "white", display: "block" }}
                 >
                   <Link
                     to={page.route}
-                    style={{ color: 'inherit', textDecoration: 'none' }}
+                    style={{ color: "inherit", textDecoration: "none" }}
                   >
                     {page.category}
                   </Link>
