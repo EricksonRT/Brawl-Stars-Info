@@ -26,6 +26,5 @@
 
 .hover-container:hover .float-name {
   transition: 0.4s all;
-
   opacity: 1;
 }
