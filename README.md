@@ -1,4 +1,4 @@
-# BrawlStar Info
+# BrawlStar Info => Deploy https://brawl-stars-info.netlify.app
 
 ## Descripción
 
