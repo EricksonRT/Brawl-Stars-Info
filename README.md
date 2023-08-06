@@ -6,15 +6,14 @@ BrawlStar Info es una página web enfocada en proporcionar información detallad
 
 ## Tecnologías
 
-Este proyecto está desarrollado utilizando las siguientes tecnologías:
+Este proyecto está desarrollado principalmente con las siguientes tecnologías:
 
-- **React.js**: Para desarrollar la interfaz de usuario de la aplicación. 
-- **Express.js**: Para ara manejar las solicitudes a la API de Brawl Stars.
+- **React + Vite**: Para desarrollar la interfaz de usuario de la aplicación. 
+- **Material UI + CSS**: Para el desarrollo de toda la interfaz.
 
 ## Funcionalidades
 
 Con BrawlStar Info, puedes:
 
-- Consultar tu propia información de jugador: Observa tus propias estadísticas, logros, progresos y más.
-- Investigar información sobre otros jugadores: Si conoces el nombre de usuario o la etiqueta del jugador, puedes buscar su información también.
-- Mantente actualizado con los eventos del juego: La web también proporciona información actualizada sobre los eventos vigentes en Brawl Stars.
+- Visualizar información sobre los brawlers, su tipo, sus habilidades, etc. A su vez también permite visualizar los iconos del juego, mapas y modos
+- Mantenerte actualizado con los eventos del juego: La web también proporciona información actualizada sobre los eventos vigentes en Brawl Stars.
