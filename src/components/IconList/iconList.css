@@ -1,0 +1,17 @@
+/* tamaño de las columnas, podrías utilizar repeat(auto-fill, minmax(min-content, max-content))
+ o repeat(auto-fill, minmax(min-size, max-size)), que llena la fila con tantas celdas como sea posible. */
+.grid{
+    width: 95%;
+    margin: auto;
+    /* background-color: aqua !important; */
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 5px;
+    
+}
+/* .flex {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+} */

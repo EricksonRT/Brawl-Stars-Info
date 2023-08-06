@@ -4,19 +4,22 @@ import {
   ImageListItem,
   ImageListItemBar,
   ListItem,
-} from '@mui/material';
-
+  MenuItem,
+} from "@mui/material";
+import "./iconList.css";
 const IconList = ({ props }) => {
   return (
     <>
-      <Grid display={'grid'} justifyItems={'center'}>
+      <Grid mt={2}>
         <CardMedia
+          width={"100%"}
           component="img"
-          height="140"
+          height="auto"
           image={props.imageUrl}
           alt="green iguana"
+          loading="lazy"
         />
-        <ImageListItemBar position="below" title={props.name} />
+        {/* <ImageListItemBar position="below" title={props.name} /> */}
       </Grid>
     </>
   );
