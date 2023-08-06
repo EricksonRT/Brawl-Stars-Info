@@ -11,7 +11,7 @@
 }
 .float-name {
   float: left;
-  background-color: rgba(0, 0, 0, 0.73);
+  background-color: rgba(0, 0, 0, 0.73) !important;
   width: 100%;
   color: #ffff;
   font-weight: 600;
