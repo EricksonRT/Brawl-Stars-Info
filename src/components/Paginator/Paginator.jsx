@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-
-const datos = Array(100)
-  .fill(null)
-  .map((_, index) => ({
-    id: index,
-    contenido: `Elemento ${index + 1}`,
-  }));
+import IconList from "../IconList/IconList";
 
 const ITEMS_PER_PAGE = 10;
 
 export const MiComponente = ({ datos }) => {
   const [paginaActual, setPaginaActual] = useState(0);
+
+  if (!datos) {
+    return <div>Cargando...</div>;
+  }
 
   // Divide los datos en páginas
   const paginas = [];
@@ -21,8 +19,10 @@ export const MiComponente = ({ datos }) => {
   // Renderiza solo los datos para la página actual
   return (
     <div>
-      {paginas[paginaActual].map((item) => (
-        <div key={item.id}>{item.contenido}</div>
+      {paginas[paginaActual].map((iconValue) => (
+        <div className="grid">
+          <IconList key={`iconList-${iconValue.id}`} props={iconValue} />
+        </div>
       ))}
       <button
         onClick={() => setPaginaActual(paginaActual - 1)}
