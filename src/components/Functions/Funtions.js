@@ -24,6 +24,10 @@ export const getIcons = () => {
   // Envia todos los mapas
   return fetch('https://api.brawlapi.com/v1/icons');
 };
+export const getMaps = () => {
+  // Envia todos los mapas
+  return fetch('https://api.brawlapi.com/v1/maps');
+};
 
 // Moment maneja fechas y horas de una manera fácil, que permite crear distintos formatos
 import moment from 'moment';
