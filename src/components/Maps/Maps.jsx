@@ -1,11 +1,24 @@
-import { useEffect, useState } from "react";
-import { getMaps } from "../Functions/Funtions";
-import { Grid, Tab, Tabs } from "@mui/material";
-import InfiniteScroll from "react-infinite-scroll-component";
+import { useEffect, useState } from 'react';
+import { getMaps } from '../Functions/Funtions';
+import { Grid, Tab, Tabs } from '@mui/material';
+import Loading from '../Loading/Loading';
+import Map from './Map';
 
 const Maps = () => {
-  const [maps, setMaps] = useState([""]);
-  const [initialValue, setValue] = useState("active");
+  const [initialValue, setValue] = useState(true);
+  const [mapFiltered, setMapFiltered] = useState(['']);
+  const [loading, setLoading] = useState(true);
+  // Este método, recibe el array de objetos de la api, y también el valor inicial que le damos, sea true o false, para filstrar por el estado de "disabled"
+  // Y por ultimo setea mapfiltered con el filtro correspondiente, sea activos o desactivados
+  const sendFilter = (maps, value) => {
+    console.log(value);
+    const listmap = { ...maps };
+    const filter = Object.values(listmap).filter(
+      (listM) => listM.disabled === value
+    );
+    setMapFiltered(filter);
+  };
+  // Este metodo maneja el estado de activos o desactivados
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -18,14 +31,17 @@ const Maps = () => {
           throw new Error();
         }
       })
-      .then((mapsJson) => setMaps(mapsJson.list))
+      .then(
+        (mapsJson) => sendFilter(mapsJson.list, initialValue),
+        setLoading(false)
+      )
       .catch();
-  }, []);
+  }, [initialValue]);
   const options = [
-    { optionEng: "active", optionpanish: "Activos" },
-    { optionEng: "disabled", optionpanish: "No disponibles" },
+    { optionEng: true, optionpanish: 'Activos' },
+    { optionEng: false, optionpanish: 'No disponibles' },
   ];
-  console.log({ ...maps });
+
   return (
     <>
       <Grid mt={5}>
@@ -39,6 +55,13 @@ const Maps = () => {
             />
           ))}
         </Tabs>
+        <div className="gallery">
+          {loading ? (
+            <Loading />
+          ) : (
+            mapFiltered.map((map) => <Map props={map} />)
+          )}
+        </div>
       </Grid>
     </>
   );

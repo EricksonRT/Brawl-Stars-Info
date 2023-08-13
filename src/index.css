@@ -63,3 +63,24 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+/* MAPS */
+.gallery {
+  width: 99%;
+  margin: auto;
+  display: grid;
+  place-content: center;
+  grid-template-rows: repeat(auto-fill, minmax(100px, 100px));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+  background-color: aquamarine;
+}
+/* .card {
+  width: 100%;
+  /* background-color: #000; }*/
+
+.logo-game {
+  width: 40%;
+  height: auto;
+}
+.image-map {
+  width: 100%;
+}
