@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
-import { getMaps } from '../Functions/Funtions';
-import { Grid, Tab, Tabs } from '@mui/material';
-import Loading from '../Loading/Loading';
-import Map from './Map';
+import { useEffect, useState } from "react";
+import { getMaps } from "../Functions/Funtions";
+import { Grid, Tab, Tabs } from "@mui/material";
+import Loading from "../Loading/Loading";
+// import Map from "./Map";
+import { Paginator } from "../Paginator/Paginator";
 
 const Maps = () => {
   const [initialValue, setValue] = useState(true);
-  const [mapFiltered, setMapFiltered] = useState(['']);
+  const [mapFiltered, setMapFiltered] = useState([""]);
   const [loading, setLoading] = useState(true);
   // Este método, recibe el array de objetos de la api, y también el valor inicial que le damos, sea true o false, para filstrar por el estado de "disabled"
   // Y por ultimo setea mapfiltered con el filtro correspondiente, sea activos o desactivados
@@ -38,8 +39,8 @@ const Maps = () => {
       .catch();
   }, [initialValue]);
   const options = [
-    { optionEng: true, optionpanish: 'Activos' },
-    { optionEng: false, optionpanish: 'No disponibles' },
+    { optionEng: true, optionpanish: "Activos" },
+    { optionEng: false, optionpanish: "No disponibles" },
   ];
 
   return (
@@ -56,10 +57,10 @@ const Maps = () => {
           ))}
         </Tabs>
         <div className="gallery">
-          {loading ? (
+          {loading && mapFiltered.length != 0 ? (
             <Loading />
           ) : (
-            mapFiltered.map((map) => <Map props={map} />)
+            <Paginator props={mapFiltered} />
           )}
         </div>
       </Grid>
