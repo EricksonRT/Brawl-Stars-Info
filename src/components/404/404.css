@@ -1,0 +1,26 @@
+.notfound-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .notfound-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .notfound-description {
+    font-size: 1.5rem;
+  }
+
+
+  
+  
+  
+  
+  
+  

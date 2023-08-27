@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Nabvar/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Icons from "./components/Icons/Icons";
 import Brawlers from "./components/Brawlers/Brawlers";
 import Events from "./components/Events/Events";
@@ -9,6 +9,7 @@ import GameModes from "./Game-Modes/GameModes";
 import Footer from "./components/Footer/Footer";
 import BrawlerDetailContainer from "./components/BrawlerDetailContainer/BrawlerDetailContainer";
 import GameModeDetailContainer from "./components/GameModeDetailContainer/GameModeDetailContainer";
+import NOT_FOUND_404 from "./components/404/404";
 function App() {
   return (
     <>
@@ -29,7 +30,10 @@ function App() {
           element={<GameModeDetailContainer />}
         />
         <Route path="/icons/" element={<Icons />} />
+        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="/404" element={<NOT_FOUND_404 />} />
       </Routes>
+
       <Footer />
     </>
   );
