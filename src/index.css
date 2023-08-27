@@ -63,6 +63,7 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 /* MAPS */
 .gallery {
   width: 99%;
@@ -127,4 +128,11 @@ cursor: pointer;
 .buttonPag:disabled{
   background-color: rgba(245, 245, 220, 0.632);
   color: #000;
+}
+.glassContainer-gmodes {
+  background-color: rgba(238, 238, 238, 0.4);
+ backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

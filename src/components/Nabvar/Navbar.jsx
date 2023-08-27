@@ -30,7 +30,7 @@ const Navbar = () => {
     { category: "Eventos", route: "/events/" },
     { category: "Iconos", route: "/icons/" },
     { category: "Mapas", route: "/maps/" },
-    { category: "Modos de juego", route: "/game-mode/" },
+    { category: "Modos de juego", route: "/game-modes/" },
   ];
 
   return (
