@@ -53,7 +53,9 @@ const Navbar = () => {
                 textDecoration: "none",
               }}
             >
-              Brawl-Stars-info
+              <Link style={{ textDecoration: "none", color: "white" }} to={"/"}>
+                Brawl-Stars-info
+              </Link>
             </Typography>
             {/* Ajustes del nav Desktop */}
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { getGameModes } from '../components/Functions/Funtions';
-import GamesModesListContainer from '../components/GameModesListContainer/GamesModesListContainer';
-import Loading from '../components/Loading/Loading';
-import { Grid, Typography } from '@mui/material';
+import { useEffect, useState } from "react";
+import { getGameModes } from "../Functions/Funtions";
+import GamesModesListContainer from "../GameModesListContainer/GamesModesListContainer";
+import Loading from "../Loading/Loading";
+import { Grid, Typography } from "@mui/material";
 
 const GameModes = () => {
   const [gamesmode, setGameModes] = useState(null);
@@ -18,16 +18,16 @@ const GameModes = () => {
   }, []);
   return (
     <>
-      <Typography mt={5} mb={2} variant={'h2'}>
+      <Typography mt={5} mb={2} variant={"h2"}>
         Modos de juego disponibles
       </Typography>
       <Grid
         gap={3}
         mt={5}
-        display={'flex'}
-        justifyContent={'center'}
-        flexWrap={'wrap'}
-        alignItems={'center'}
+        display={"flex"}
+        justifyContent={"center"}
+        flexWrap={"wrap"}
+        alignItems={"center"}
       >
         {isLoading ? (
           <Loading />
