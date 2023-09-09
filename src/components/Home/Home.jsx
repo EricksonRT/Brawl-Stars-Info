@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import fondobg from "./../../assets/img/brawl-stars.jpg";
 
 const Home = () => {
   return (
